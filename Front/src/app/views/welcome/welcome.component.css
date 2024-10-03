@@ -1,0 +1,18 @@
+.profileImageHolder {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profileImage {
+    border: 3px solid #1e73a1;
+}
+
+.textToRight{
+    text-align: right;
+}
+
+.textToCenter{
+    text-align: center;
+}
+
+/* 0499cb */

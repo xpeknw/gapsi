@@ -1,9 +1,7 @@
-
-
-<div class="animated fadeIn" style="display: block;">
-  <div class="flex">
+<div class="animated fadeIn">
+  <div class="flex fixTableWidth">
     <div class="col-12">
-      <div class="card custom-rounded custom-shadow border-0 my-auto">
+      <div class="card custom-rounded custom-shadow ">
         <div class="card-body p-4">
           <div class="row">
             <div class="col-6">
@@ -15,22 +13,24 @@
               <div class="form-group col-12">
                 <label class="form-control-label" for="form-group-input">Nombre</label>
                 <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="selectedProvider.name"
-                  name="name" required>
+                  name="name" id="name" required>
               </div>
               <div class="form-group col-12">
                 <label class="form-control-label" for="form-group-input">Nombre</label>
                 <input type="text" class="form-control" placeholder="Razón Social"
-                  [(ngModel)]="selectedProvider.trade_name" name="trade_name" required>
+                  [(ngModel)]="selectedProvider.trade_name" name="trade_name" required id="trade_name">
               </div>
               <div class="form-group col-12">
                 <label class="form-control-label" for="form-group-input">Dirección</label>
                 <input type="text" class="form-control" placeholder="Dirección" [(ngModel)]="selectedProvider.address"
-                  name="address" required>
+                  name="address" required id="address">
               </div>
 
               <div class="form-group col-12">
-                <button class="btn btn-red-xl col-md-2 mr-4" type="submit" (click)="saveProvider()">Guardar</button>
-                <button class="btn btn-outline-gray-xl col-md-2" type="button" (click)="cancel()">Cancelar</button>
+                <button mat-flat-button extended color="primary" (click)="saveProvider()"
+                  class="col-md-2 mr-4 extendElement"> Guardar</button>
+                <button mat-flat-button extended (click)="cancel()" class="col-md-2 mr-4 extendElement">
+                  Cancelar</button>
               </div>
             </div>
           </form>

@@ -1,0 +1,20 @@
+.deleteButton {
+    color: red;
+}
+
+.editButton {
+    color: dodgerblue;
+}
+
+.printButton {
+    color: darkolivegreen;
+}
+
+.updateButton {
+    color: rgb(37, 144, 232);
+}
+
+.createProviderButton {
+    color: royalblue;
+}
+

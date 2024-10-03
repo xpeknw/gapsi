@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../utils/network/api';
 import { environment } from '../../../environments/environment.prod';
+import { AppComponent } from 'src/app/app.component';
 
 
 @Component({
-  templateUrl: 'welcome.component.html'
+  templateUrl: 'welcome.component.html',
+  styleUrls: ['welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
   logoSource = '../assets/logo.png';
@@ -47,11 +49,11 @@ export class WelcomeComponent implements OnInit {
     })
   }
 
-  // getProfileImage(){
-  // return "https://picsum.photos/200";
-
-  // }
   goToMain() {
     this._router.navigateByUrl('principal', { replaceUrl: true });
+  }
+
+  about(){
+    window.open("https://github.com/xpeknw/gapsi");
   }
 }

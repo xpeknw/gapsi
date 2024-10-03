@@ -1,7 +1,9 @@
+<div class="fixTableWidth"><img [src]="logoSource" width="150"></div>
+
 <router-outlet></router-outlet>
 
 
 <div *ngIf="showInstallButton"
-    style="position: absolute; bottom: 0; text-align: center; width: 100%; margin-bottom: 40px;">
-    <button mat-flat-button (click)="installApp()" color="primary"> Instalar aplicación </button>
+    style="position: fixed; bottom: 0; text-align: center; width: 100%; margin-bottom: 40px;">
+    <button mat-flat-button (click)="installApp()" color="accent"> Instalar aplicación </button>
 </div>

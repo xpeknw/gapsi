@@ -4,22 +4,19 @@
       <div class="row justify-content-center">
         <div class="col-6 ">
           <div class="card">
-            <div class="card-header" style="background-color: #eee;">
+            <div class="card-header cardHeaderColor">
               <div class="row">
                 <div class="col-6"><strong>e-Commerce GAPSI</strong></div>
-                <div class="col-6" style="text-align: right;"><span class="pull-right">
-                    <button mat-flat-button> Continuar </button> </span></div>
+                <div class="col-6 textToRight">
+                  <button mat-mini-fab color="secondary" [matMenuTriggerFor]="menu"> <i
+                      class="fa-solid fa-ellipsis-vertical"></i> </button>
+                </div>
               </div>
             </div>
-            <div class="card-body" style="text-align: center;">
+            <div class="card-body textToCenter">
               <div class="row">
-                <div class="col-12 d-flex justify-content-center align-items-center" style="height: 100px; width: 100%;">
-                  <div
-                    style="background-color: white; border: 2px solid teal; width: 100px; height: 100px; border-radius: 50%; background-image: url('{{logoSource}}'); background-repeat: no-repeat; background-position: center; background-size: contain;">
-                  </div>
-                </div>
-                <div class="col-12" style="margin-top: 20px; margin-bottom: 20px;">
-                  <img [src]="profileImage" class="rounded-circle" alt="img" style="border: 2px solid teal; ">
+                <div class="col-12 profileImageHolder">
+                  <img [src]="profileImage" class="rounded-circle profileImage">
                 </div>
                 <div class="col-12">
                   <p>Bienvenido Candidato {{candidateId}}</p>
@@ -27,7 +24,7 @@
                 <div class="col-12">
                   <button mat-flat-button (click)="goToMain()" color="primary"> Continuar </button>
                 </div>
-                <div class="col-12" style="text-align: right;">
+                <div class="col-12 textToRight">
                   <span>version {{version}}</span>
                 </div>
               </div>
@@ -38,3 +35,6 @@
     </div>
   </div>
 </div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="about()">Acerca de este proyecto</button>
+</mat-menu>

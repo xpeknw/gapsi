@@ -10,7 +10,8 @@ import { Utils } from '../../utils/utils';
 
 
 @Component({
-  templateUrl: 'main.component.html'
+  templateUrl: 'main.component.html',
+  styleUrls: ['main.component.css']
 })
 export class MainComponent implements AfterViewInit {
   @ViewChild(MatSort)
@@ -95,6 +96,10 @@ export class MainComponent implements AfterViewInit {
     this._router.navigateByUrl('bienvenida', { replaceUrl: true })
   }
   printProvider() {
-
+    this.paginator._changePageSize(1000);  
+    setTimeout(() => {
+      window.print();
+      this.paginator._changePageSize(5);  
+    }, 500);
   }
 }
