@@ -85,7 +85,35 @@ query Provider {
     }
 }
 
+# Create provider 
+mutation AddProvider {
+    addProvider {
+        id
+        name
+        trade_name
+        address
+    }
+}
 
+# Update provider information using Id
+mutation UpdateProvider {
+    updateProvider(id: null) {
+        id
+        name
+        trade_name
+        address
+    }
+}
+
+# Delete provider information using Id
+mutation {
+  deleteProvider(id: "10") {
+    id
+    name
+    trade_name
+    address
+  }
+}
 ```
 
 ## Contributing
