@@ -1,4 +1,4 @@
-# Foobar
+# GAPSI
 
 Gapsi Project is an implmenetation of Koa backend + Angular site, to manage Providers registry.
 
@@ -33,7 +33,7 @@ npm install
 ```
 
 
-## Front-end usage
+## Back-end usage
 
 To launch dev mode use
 
@@ -44,6 +44,7 @@ node app.js
 Alternatively can be runned using nodemon or forever to be autorenewed on failure or modifications.
 
 ```bash
+# start nodemon for reload on updated files 
 nodemon app.js
 
 # start forever instance and nodemon
