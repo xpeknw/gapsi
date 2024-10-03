@@ -63,6 +63,31 @@ Also in the Back folder, there are two files called 'Gapsi.postman_collection.js
 
 The GraphQL can be accessed through [GraphQL](http://localhost:3000/graphql)
 
+```graphql
+
+# List all the providers
+query Providers {
+    providers {
+        id
+        name
+        trade_name
+        address
+    }
+}
+
+# Get provider information by id
+query Provider {
+    provider(id: null) {
+        id
+        name
+        trade_name
+        address
+    }
+}
+
+
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
