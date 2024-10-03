@@ -2,6 +2,22 @@
 
 Gapsi Project is an implementation of Koa backend + Angular site, to manage Providers registry.
 
+## Prerequisites
+
+Before running the project, make sure you have the following prerequisites installed:
+
+### Node.js
+You need to have **Node.js** installed on your machine.
+
+- You can download Node.js from the [Node.js Official Website](https://nodejs.org/).
+
+### Angular
+You need to have **Angular** installed on your machine.
+
+```bash
+npm install -g @angular/cli
+```
+
 ## Front-end
 
 Navigate to the 'Front' Folder and execute npm install to fulfill prerequisites and be able to launch the administration panel. By default [panel](http://localhost:4200) 
