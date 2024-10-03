@@ -80,7 +80,7 @@ forever stop {forever id}
 
 While back-end is running the documentation will be found in [Documentation](http://localhost:3000/docs)
 
-Also in the Back folder, there are two files called 'Gapsi.postman_collection.json' and 'Gapsi GraphQL.postman_collection.json' Postman ready.
+Also in the root folder, there are two files called 'Gapsi.postman_collection.json' and 'Gapsi GraphQL.postman_collection.json' Postman ready.
 
 The GraphQL can be accessed through [GraphQL](http://localhost:3000/graphql)
 

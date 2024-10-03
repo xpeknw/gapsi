@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "3c857eb1-058d-4d94-88e3-09a77495e2da",
+		"name": "Gapsi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3661486"
+	},
+	"item": [
+		{
+			"name": "ListProviders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/providers",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"providers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProviderInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/provider/11",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"provider",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProvider",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"pruebass\",\n    \"trade_name\": \"pruebas\",\n    \"address\": \"pruebas\",\n    \"id\": \"11\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/provider/11",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"provider",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProvider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"pruebass\",\n    \"trade_name\": \"pruebas1\",\n    \"address\": \"pruebas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/provider",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProvider",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/provider/11",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"provider",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:3000"
+		}
+	]
+}
