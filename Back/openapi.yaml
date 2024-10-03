@@ -1,0 +1,113 @@
+openapi: 3.0.0
+info:
+  title: Gapsi Api Documentation
+  version: 1.0.0
+tags:
+  - name: Providers
+    description: Providers Operations
+paths:
+  /providers:
+    get:
+      tags:
+        - Providers
+      summary: List all the Providers
+      responses:
+        '200':
+          description: Providers List
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Provider'
+
+  /provider/{id}:
+    get:
+      tags:
+        - Providers
+      summary: Get Provider by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Provider to get
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Provider Information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provider'
+        '404':
+          description: Provider not found
+
+    patch:
+      tags:
+        - Providers
+      summary: Update Provider information
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Provider to be updated
+          schema:
+            type: string
+      requestBody:
+        description: Provider data to be Updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProviderUpdate'
+      responses:
+        '200':
+          description: Provider successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provider'
+        '404':
+          description: Provider not found
+    delete:
+      tags:
+        - Providers
+      summary: Delete Provider
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Provider id to delete
+          schema:
+            type: string
+      
+      responses:
+        '200':
+          description: Proveedor successfully deleted
+        '404':
+          description: Provider not found
+
+components:
+  schemas:
+    Provider:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        trade_name:
+          type: string
+        address:
+          type: string
+
+    ProviderUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        trade_name:
+          type: string
+        address:
+          type: string

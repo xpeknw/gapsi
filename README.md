@@ -26,6 +26,27 @@ ng build --configuration production
 
 ## Back-end
 
+Configuration file is required as '.env' 
+The default file can be renamed and use it as is to have default configuration.
+
+```bash
+PORT=3000
+APP_VERSION=1.0.0
+DATA_FILE=data.json
+OPENAPI_YAML=openapi.yaml
+```
+
+Data file is required as 'db.json' with the next structure.
+
+```JSON
+[{
+    "id": "1",
+    "name": "Corporativo J 1",
+    "trade_name": "Corporativo J 1 S.C",
+    "address": "Circuito 101, Ciudad F, País B"
+}]
+```
+
 Navigate to the 'Back' Folder and execute npm install to fulfill prerequisites and be able to launch the Backend. By default [backend](http://localhost:3000) 
 
 ```bash
