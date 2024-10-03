@@ -1,2 +1,6 @@
 
 /Back/node_modules
+/Front/dist
+/Front/.angular
+/Front/node_modules
+.DS_Store
