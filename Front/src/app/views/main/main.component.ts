@@ -49,6 +49,7 @@ export class MainComponent implements AfterViewInit {
         }
       },
       error: (error) => {
+        // If the get fails, the system can emulate data from mock just to test other behaviours, save and remove will not be permanent
         this.providers = mockedProviders;
         this.totalProviders = mockedProviders.length.toString();
         this.configTable();

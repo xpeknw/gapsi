@@ -2,7 +2,8 @@ import { Providers } from "../app/utils/models/provider";
 
 export const environment = {
   production: true,
-  version: "0.0.1"
+  version: "0.0.1",
+  api: "http://localhost:3000/"
 };
 
 export const mockedProviders: Providers[] = [

@@ -1,6 +1,7 @@
+// UserData model adaptation for the External Api to retrieve random information and images for fictional person
+
 export class UserData {
     results?: UserInfo[];
-    
 }
 
 export class UserInfo{

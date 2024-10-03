@@ -1,5 +1,6 @@
-import Swal from 'sweetalert2';
+// Utilities to load a Fancy and customizable alert to display messages and handle actions in the system
 
+import Swal from 'sweetalert2';
 export class Utils{
   launchMessage(title: string, msg: string, color: string = '', showCancelButton: boolean = true) {
     switch (color) {

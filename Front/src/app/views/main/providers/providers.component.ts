@@ -1,3 +1,4 @@
+// In this section I used the Factory desing to make it different from the others
 // Design Pattern - Factory
 
 import { Component, OnInit } from '@angular/core';
@@ -44,11 +45,11 @@ export class ProvidersComponent implements OnInit {
         this.selectedProvider = provider
       },
       error: (error) => {
+        // If the get fails, the system can emulate data from mock just to test other behaviours, save and remove will not be permanent and might fail
         this.selectedProvider = mockedProvider;
       }
     })
   }
-
 
   // Initiate Saving process with simple validations of data
   saveProvider() {

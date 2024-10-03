@@ -1,8 +1,12 @@
+// ProvidersData model has 2 elements
+// total gets the amount of providers registered for pagination
+// items is a list of Providers Model
 export class ProvidersData {
   total?: string;
   items?: Providers[];
 }
 
+// Providers model
 export class Providers {
   id?: string;
   name?: string;
@@ -18,7 +22,7 @@ export class Providers {
   }
 }
 
-// For Factory design Pattern
+// For Factory design Pattern with a blank Provider object creation
 export class ProviderFactory {
   static createProvider(): Providers {
     const provider = new Providers();
