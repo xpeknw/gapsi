@@ -1,3 +1,6 @@
+// In this section I used the MVC desing as is the default workflow from angular
+// Design Pattern - MVC
+
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../utils/network/api';
@@ -27,13 +30,13 @@ export class MainComponent implements AfterViewInit {
     private _router: Router,
     private _api: ApiService,
     private _utils: Utils
-  ) {
-  }
+  ) {}
 
   ngAfterViewInit() {
     this.getProviders();
   }
 
+  // List all the providers obtained by the backend
   getProviders() {
     this._api.getProvidersData().subscribe({
       next: (providersData) => {
@@ -53,12 +56,14 @@ export class MainComponent implements AfterViewInit {
     })
   }
 
+  // Table configuratin for pagination and sorting
   configTable() {
     this.dataSource = new MatTableDataSource(this.providers);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
+  // Search in table
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -67,14 +72,17 @@ export class MainComponent implements AfterViewInit {
     }
   }
 
+  // Go to add provider view
   addProvider() {
     this._router.navigateByUrl(`proveedor/nuevo`)
   }
 
+  // Go to edit provider view using provider id as route
   editProvider(provider: Providers) {
     this._router.navigateByUrl(`proveedor/${provider.id}`);
   }
 
+  // Delete provider with confirmation as is not possible to rollback
   deleteProvider(provider: Providers) {
     this._utils.launchMessage("Alerta", `Estas seguro de querer eliminar al proveedor "${provider.name} - ${provider.trade_name}".\nEsta acción es irreversible.`, "danger").then(res => {
       if (res.isConfirmed) {
@@ -92,9 +100,12 @@ export class MainComponent implements AfterViewInit {
     });
   }
 
+  // Go back to welcome window
   goBack() {
     this._router.navigateByUrl('bienvenida', { replaceUrl: true })
   }
+
+  // Print all the data 
   printProvider() {
     this.paginator._changePageSize(1000);  
     setTimeout(() => {

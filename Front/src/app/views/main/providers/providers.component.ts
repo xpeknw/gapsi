@@ -24,6 +24,7 @@ export class ProvidersComponent implements OnInit {
     this.selectedProvider = ProviderFactory.createProvider();
   }
 
+  // Gather id from url to create new provider or get the provider information by id
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe(response => {
       if (response.get('id') === 'nuevo') {
@@ -36,6 +37,7 @@ export class ProvidersComponent implements OnInit {
     });
   }
 
+  // Get the provider information by id
   getProvider(providerId: string) {
     this._api.getProvider(providerId).subscribe({
       next: (provider) => {
@@ -47,11 +49,10 @@ export class ProvidersComponent implements OnInit {
     })
   }
 
-  cancel() {
-    this._router.navigateByUrl(`principal`, { replaceUrl: true });
-  }
 
+  // Initiate Saving process with simple validations of data
   saveProvider() {
+    // If it is adding should contain the 3 input filled
     if (this.adding) {
       if (!this.selectedProvider.name) {
         this._utils.launchMessage("Alerta", "Es necesario introducir un nombre.", "", false).then(() => {
@@ -69,6 +70,7 @@ export class ProvidersComponent implements OnInit {
         })
       }
       else {
+        // If the trade name is already registered will advice about it, otherwise the new data will be saved
         this._api.createProvider(this.selectedProvider).subscribe({
           next: (provider) => {
             this._utils.launchMessage("Alerta", "Registro Creado correctamente.", "", false).then(() => {
@@ -86,6 +88,7 @@ export class ProvidersComponent implements OnInit {
       }
     }
     else {
+      // If it is editing will try to update, in a weird case that the provider does not exist the system will advice about it
       this._api.patchProvider(this.selectedProvider).subscribe({
         next: (provider) => {
           this._utils.launchMessage("Alerta", "Registro Actualizado correctamente.", "", false).then(() => {
@@ -101,5 +104,10 @@ export class ProvidersComponent implements OnInit {
         }
       })
     }
+  }
+
+  // Go back to main windows
+  cancel() {
+    this._router.navigateByUrl(`principal`, { replaceUrl: true });
   }
 }

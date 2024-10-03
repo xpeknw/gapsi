@@ -7,9 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-
 @NgModule({
   imports: [
     FormsModule,
@@ -17,11 +14,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     CommonModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule,
-    MatPaginatorModule,
-    MatTableModule
-
-
+    MatCardModule
   ],
   declarations: [ProvidersComponent],
   providers: []

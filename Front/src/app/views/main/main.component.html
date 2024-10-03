@@ -15,7 +15,8 @@
               </div>
             </div>
             <div class="card-body">
-              <table mat-table [dataSource]="dataSource" class="extendElement">
+              <input type="text" class="form-control searchField" placeholder="Buscar por..." (keyup)="applyFilter($event)">
+              <table mat-table [dataSource]="dataSource" matSort class="extendElement">
                 "name", "trade_name", "address",
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>

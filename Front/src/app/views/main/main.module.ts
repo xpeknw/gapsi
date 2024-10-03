@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -19,9 +19,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatCardModule,
     MatPaginatorModule,
-    MatTableModule
-
-
+    MatTableModule,
+    MatSortModule
   ],
   declarations: [MainComponent],
   providers: []
