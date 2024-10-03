@@ -1,6 +1,6 @@
 # GAPSI
 
-Gapsi Project is an implmenetation of Koa backend + Angular site, to manage Providers registry.
+Gapsi Project is an implementation of Koa backend + Angular site, to manage Providers registry.
 
 ## Front-end
 
@@ -54,6 +54,12 @@ forever start -c nodemon .
 forever stop <forever id>
 
 ```
+
+## Documentation
+
+While back-end is running the documentation will be found in [Documentation](http://localhost:3000/docs)
+Also in the Back folder, there are two files called 'Gapsi.postman_collection.json' and 'Gapsi GraphQL.postman_collection.json' Postman ready.
+The GraphQL can be accessed through (GraphQL)[http://localhost:3000/graphql]
 
 ## Contributing
 
