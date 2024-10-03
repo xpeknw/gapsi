@@ -58,6 +58,11 @@ router.get('/appversion', (ctx) => {
     ctx.body = { "version": `${process.env.APP_VERSION}` };
 });
 
+// Get User welcome
+router.get('/user-welcome', (ctx) => {
+    ctx.body = { "name": `${process.env.APP_VERSION}` };
+});
+
 // List all the providers
 router.get('/providers', (ctx) => {
     const providers = readData();

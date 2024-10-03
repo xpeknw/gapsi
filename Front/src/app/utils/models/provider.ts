@@ -17,3 +17,14 @@ export class Providers {
     }
   }
 }
+
+// For Factory design Pattern
+export class ProviderFactory {
+  static createProvider(): Providers {
+    const provider = new Providers();
+    provider.name = '';
+    provider.trade_name = '';
+    provider.address = '';
+    return provider;
+  }
+}

@@ -58,5 +58,11 @@
         "trade_name": "pruebas1",
         "address": "pruebas",
         "id": "13"
+    },
+    {
+        "name": "Nuevo Proveedor",
+        "trade_name": "Nuevo Comercio",
+        "address": "Nueva Dirección",
+        "id": "14"
     }
 ]

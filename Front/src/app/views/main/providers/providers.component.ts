@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+// Design Pattern - Factory
+
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../../utils/network/api';
 import { Providers } from '../../../utils/models/provider';
 import { mockedProvider } from '../../../../environments/environment.prod';
-
+import { ProviderFactory } from '../../../utils/models/provider';
 
 @Component({
   templateUrl: 'providers.component.html'
 })
-export class ProvidersComponent {
+export class ProvidersComponent implements OnInit {
   providerId = "";
   adding: boolean = false;
   selectedProvider!: Providers;
@@ -17,18 +19,19 @@ export class ProvidersComponent {
     private _api: ApiService,
     private _activatedRoute: ActivatedRoute
   ) {
-    this.selectedProvider = new Providers();
-    this.selectedProvider.name = "pruebas"
-    this.selectedProvider.trade_name = "pruebas"
-    this.selectedProvider.address = "pruebas"
+    this.selectedProvider = ProviderFactory.createProvider();
+  }
+
+  ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe(response => {
-      if (response.get('id') == "nuevo") {
+      if (response.get('id') === 'nuevo') {
         this.adding = true;
+        this.selectedProvider = ProviderFactory.createProvider();  // Creamos un nuevo proveedor
+      } else {
+        this.adding = false;
+        this.getProvider(response.get('id') || '');
       }
-      else {
-        this.getProvider(response.get('id') || "");
-      }
-    })
+    });
   }
 
   getProvider(providerId: string) {

@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Providers, ProvidersData } from '../models/provider';
 import { AppVersion } from '../models/appversion';
+import { UserData } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class ApiService {
   providers: Subject<ProvidersData> = new Subject();
   provider: Subject<Providers> = new Subject();
   appversion: Subject<AppVersion> = new Subject();
+  userData: Subject<UserData> = new Subject();
   constructor(
     private http: HttpClient,
   ) {
@@ -31,6 +33,14 @@ export class ApiService {
     return this.http.get<AppVersion>(this.gapsiApi + `appversion`, this.header).pipe(
       tap(response => {
         this.appversion.next(response);
+      })
+    );
+  }
+
+  getRandomNameAndPhoto(){
+    return this.http.get<UserData>('https://randomuser.me/api/').pipe(
+      tap(response => {
+        this.userData.next(response);
       })
     );
   }
