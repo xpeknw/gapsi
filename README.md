@@ -51,15 +51,17 @@ nodemon app.js
 forever start -c nodemon .
 
 # stop the proccess
-forever stop <forever id>
+forever stop {forever id}
 
 ```
 
 ## Documentation
 
 While back-end is running the documentation will be found in [Documentation](http://localhost:3000/docs)
+
 Also in the Back folder, there are two files called 'Gapsi.postman_collection.json' and 'Gapsi GraphQL.postman_collection.json' Postman ready.
-The GraphQL can be accessed through (GraphQL)[http://localhost:3000/graphql]
+
+The GraphQL can be accessed through [GraphQL](http://localhost:3000/graphql)
 
 ## Contributing
 
