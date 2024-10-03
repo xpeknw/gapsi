@@ -33,12 +33,24 @@ To launch dev mode use
 ```bash
 ng serve
 ```
+Open your browser and navigate to http://localhost:4200/ to see the application running.
 
 Alternatively a build can be created to load in a server. This will create the "dist" folder ready for production.
 
 ```bash
 ng build --configuration production
 ```
+
+## Front-end Installation as Chrome App
+
+To launch dev mode use
+
+```bash
+ng serve
+```
+Open your browser and navigate to http://localhost:4200/ to see the application running. 
+Click on "Install Application"
+The promt will ask for confirmation, once it is instaled you can directly access to it from chrome applications.
 
 ## Back-end
 
