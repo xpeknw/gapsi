@@ -1,8 +1,11 @@
+// Environment variables through .env file
 require('dotenv').config();
+// Implementation of Koa 
 const Koa = require('koa');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const cors = require('@koa/cors');
+// File system to read external files
 const fs = require('fs');
 const path = require('path');
 // GraphQL implementation
