@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { Providers, ProvidersData } from '../models/provider';
 import { AppVersion } from '../models/appversion';
 import { UserData } from '../models/user';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class ApiService {
   constructor(
     private http: HttpClient,
   ) {
-    this.gapsiApi = "http://localhost:3000/";
+    this.gapsiApi = environment.api;
   }
 
   // Get the Appversion and return AppVersion Model
